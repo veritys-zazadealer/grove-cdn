@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0c0c0c; overflow: hidden;
+    font-family: 'Cascadia Code', 'Cascadia Mono', Consolas, 'SF Mono', ui-monospace, monospace; }
+#term { display: flex; flex-direction: column; height: 100vh; background: rgba(12,12,12,0.96); }
+.tabs { display: flex; align-items: center; height: 34px; background: #1f1f1f; padding: 0 6px; gap: 2px; flex: 0 0 auto; -webkit-user-select: none; user-select: none; }
+.tab { display: flex; align-items: center; gap: 7px; height: 26px; padding: 0 8px 0 12px; background: #232323; border-radius: 6px 6px 0 0; color: #9a9a9a; font-size: 12px; cursor: pointer; max-width: 200px; }
+.tab.active { background: #2d2d2d; color: #eee; }
+.tab i.ri-terminal-line { font-size: 14px; color: #4ec9b0; }
+.tab span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tab .tclose { font-size: 14px; color: #888; border-radius: 4px; padding: 1px; margin-left: 2px; }
+.tab .tclose:hover { background: #444; color: #fff; }
+.screens { flex: 1; display: flex; min-height: 0; }
+.tabs .newt, .tabs .drop { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; color: #9a9a9a; border: 0; background: none; cursor: pointer; border-radius: 5px; font-size: 15px; }
+.tabs .newt:hover, .tabs .drop:hover { background: #333; color: #fff; }
+.screen { flex: 1; overflow-y: auto; padding: 8px 12px; color: #ccc; font-size: 13.5px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+.screen a { color: #3b8eea; }
+.line { white-space: pre-wrap; }
+.prompt { color: #cccccc; }
+.pp { color: #16c60c; }
+.err { color: #e74856; }
+.ok { color: #16c60c; }
+.dim { color: #767676; }
+.cyan { color: #3a96dd; }
+.yellow { color: #f9f1a5; }
+.dir { color: #3a96dd; font-weight: 600; }
+.inline { display: flex; align-items: baseline; }
+.inline .pfx { flex: 0 0 auto; white-space: pre; }
+.inline input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: #eee;
+    font: inherit; caret-color: #ccc; padding: 0; margin-left: 0; }
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-thumb { background: #333; border: 3px solid #0c0c0c; border-radius: 8px; }

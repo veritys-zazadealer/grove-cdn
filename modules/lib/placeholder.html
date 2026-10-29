@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Loading…</title>
+<style>
+* { box-sizing: border-box; }
+html, body {
+    margin: 0; height: 100%; width: 100%;
+    background: radial-gradient(ellipse at center, #1a1118 0%, #0a0a0c 70%);
+    color: #ededf0;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    overflow: hidden; user-select: none;
+}
+.glyph {
+    width: 84px; height: 84px;
+    border-radius: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; font-weight: 700; letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 26px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+h1 {
+    font-size: 22px; font-weight: 500; letter-spacing: -0.01em;
+    margin: 0 0 6px;
+}
+.sub {
+    font-size: 13px; color: rgba(237, 237, 240, 0.4);
+    margin-bottom: 24px;
+}
+.note {
+    max-width: 360px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 12px;
+    color: rgba(237, 237, 240, 0.6);
+    line-height: 1.55;
+    text-align: center;
+}
+.dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: #ff8453; margin-right: 6px;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div class="glyph" id="glyph"></div>
+<h1 id="name">Loading…</h1>
+<div class="sub"><span class="dot"></span>Demo placeholder</div>
+<div class="note">
+    The game library backend isn't wired in this build. When deployed, this slot loads the real game from the catalog endpoint.
+</div>
+<script>
+const params = new URLSearchParams(location.search);
+const name = params.get('name') || 'Game';
+const id = params.get('id') || '';
+document.getElementById('name').textContent = name;
+const initials = name.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+const palette = ['#ff8453','#5a8cff','#ff5a8c','#5affb6','#c75aff','#ffd45a','#5affef','#ff5a5a'];
+const idx = Math.abs([...id].reduce((a, c) => a + c.charCodeAt(0), 0)) % palette.length;
+const accent = palette[idx];
+const g = document.getElementById('glyph');
+g.style.background = `linear-gradient(135deg, ${accent} 0%, ${accent}66 60%, #1a1118 100%)`;
+g.textContent = initials;
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+(function(){try{if(window.devicePixelRatio>1)Object.defineProperty(window,"devicePixelRatio",{configurable:true,get:function(){return 1}})}catch{}})();

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="225" height="225" viewBox="0 0 225 225">
+<path d="M0 0 C74.25 0 148.5 0 225 0 C225 74.25 225 148.5 225 225 C150.75 225 76.5 225 0 225 C0 150.75 0 76.5 0 0 Z " fill="none" transform="translate(0,0)"/>
+<circle cx="112.5" cy="82" r="39" fill="#ff8453"/>
+<path d="M112.5 131 C 76 131 47 160 45 197 C 44.6 202.5 48.3 206 54 206 L 171 206 C 176.7 206 180.4 202.5 180 197 C 178 160 149 131 112.5 131 Z " fill="#ff8453"/>
+</svg>
