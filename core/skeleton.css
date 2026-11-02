@@ -1,4 +1,4 @@
-
+/* serum skeleton loaders — shimmer placeholders shown while content loads */
 @keyframes serum-sk { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
 .sk {
@@ -11,6 +11,7 @@
     border-radius: 8px;
 }
 
+/* shapes */
 .sk-poster { width: 100%; aspect-ratio: 3 / 4; border-radius: 8px; }
 .sk-square { width: 100%; aspect-ratio: 1 / 1; border-radius: 10px; }
 .sk-wide   { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; }
@@ -20,8 +21,10 @@
 .sk-text.sm { height: 9px; }
 .sk-title  { height: 16px; width: 150px; border-radius: 6px; }
 
+/* widths */
 .sk-w90 { width: 90%; } .sk-w70 { width: 70%; } .sk-w50 { width: 50%; } .sk-w40 { width: 40%; } .sk-w30 { width: 30%; }
 
+/* layouts */
 .sk-wrap  { padding: 20px 24px; }
 .sk-grid  { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
 .sk-grid.posters { grid-template-columns: repeat(auto-fill, minmax(138px, 1fr)); }
@@ -32,11 +35,13 @@
 .sk-block + .sk-block { margin-top: 30px; }
 .sk-card .sk-text { margin: 8px 0 0; }
 
+/* list rows (music tracks / search) */
 .sk-list { display: flex; flex-direction: column; gap: 10px; }
 .sk-list-row { display: flex; align-items: center; gap: 12px; }
 .sk-list-row .sk-thumb { width: 46px; height: 46px; border-radius: 7px; flex: 0 0 auto; }
 .sk-list-row .sk-lines { flex: 1; }
 
+/* fade the real content in once it replaces the skeleton */
 .sk-in { animation: serum-sk-in 0.24s ease; }
 @keyframes serum-sk-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
